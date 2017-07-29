@@ -1,52 +1,56 @@
-<h1>Burgers!</h1>
+
+<img src="assets/img/burger-icon.png" alt="burger">
+<h1>MVC with Burgers!</h1>
 
 
-<ul>
-  {{#each burgers}}
-    {{#unless this.devoured}}
-      <li>
-        {{this.burger_name}}
+<div id="burgerForm">
+    <h2>Add a Burger</h2>
+    <form class="create-update-form" action="/" method="POST">
 
-        <form action="/{{this.id}}?_method=PUT" method="POST">
-<<<<<<< HEAD
-          <input type="hidden" name="devoured" value="false">
-          <button type="submit">DEVOUR</button>
-=======
-          <input type="hidden" name="devoured" value="true">
-          <button type="submit">SLEEP TIME!</button>
->>>>>>> 3b087e847a549afef519f223ad8d5330de79e653
-        </form>
+      <div class="form-group">
+        <label for="burg">Burger Name:</label>
+        <input type="text" id="burg" name="name">
+      </div>
 
-      </li>
-    {{/unless}}
-  {{/each}}
-</ul>
+      <button type="submit" id="submitBurg">Add Burger</button>
+    </form>
+</div>  
 
-<h2>Cats that are sleepy!</h2>
+<div id="burgerContainer">
+  <div id="notDevoured">
+    <h2>Available Burgers</h2>
+    <ul>
+      {{#each burgers}}
+        {{#unless this.devoured}}
+          <li>
+            {{this.burger_name}}
 
-<ul>
-  {{#each burgers}}
-    {{#if this.devoured}}
-      <li>
-        {{this.burger_name}}
+            <form action="/{{this.id}}?_method=PUT" id="devour" method="POST">
+              <input type="hidden" name="devoured" value="false">
+              <button type="submit">DEVOUR</button>
+            </form>
 
-        <form action="/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="devoured" value="false">
-          <button type="submit">WAKE UP!</button>
-        </form>
+          </li>
+        {{/unless}}
+      {{/each}}
+    </ul>
+  </div>  
 
-      </li>
-    {{/if}}
-  {{/each}}
-</ul>
+  <div id="devoured">
+    <h2>Devoured Burgers</h2>
+    <ul>
+      {{#each burgers}}
+        {{#if this.devoured}}
+          <li>
+            {{this.burger_name}}
 
-<h2>Add a Burger</h2>
-<form class="create-update-form" action="/" method="POST">
+          </li>
+        {{/if}}
+      {{/each}}
+    </ul>
+  </div> 
+</div> 
 
-  <div class="form-group">
-    <label for="burg">Burger Name:</label>
-    <input type="text" id="burg" name="name">
-  </div>
-
-  <button type="submit">Add Burger</button>
-</form>
+<a href="#" title="See Github Repo">
+  <img src="http://www.iconsdb.com/icons/preview/white/github-10-xxl.png" alt="Github Link" id="icon">
+</a>

@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    background-image: url("../img/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+}
+
+img {
+    width: 10em;
+}
+
+#burgerContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.form-group {
+    font-size: 1.1em;
+}
+
+#submitBurg {
+    font-size: 1em;
+    margin-top: 1em;
+}
+
+#burgerForm {
+    background: rgba(255,255,255,0.5);
+    width: 48%;
+    margin: 2em auto;
+    padding: 1em 3em 3em;
+    border: 2px solid black;
+}
+
+#notDevoured, #devoured {
+    align-items: flex-start; 
+    background: rgba(255,255,255,0.5);
+    margin: 1em;
+    padding: 2em;
+    border: 2px solid black;
+
+}
+
+ul {
+    list-style: none;
+    -webkit-padding-start: 0px
+}
+
+li {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: 1.15em;
+}
+
+#devoured {
+    color: grey;
+}
+
+button {
+    background: rgba(255,255,255,0.5);
+    border: 1px solid black;
+    padding: .5em;
+}
+
+button:hover {
+    background-color: rgba(56,56,56,0.85);
+    color: #fff;
+}
+
+#devour {
+    padding-left: 1em;
+    float: left;
+}
+
+#icon {
+    width: 3em;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
